@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>img search</title>
+</head>
+
+<body>
+  <input placeholder="search here .." type="text" id="q">
+  <input placeholder="offset" type="number" id="offset">
+  <button id="searchBtn">search</button>
+  <a href="/api/imgsearch/latest">get latest search history</a>
+  <script>
+    (function () {
+      var q = document.getElementById('q');
+      var offser = document.getElementById('offset');
+      var searchBtn = document.getElementById('searchBtn');
+      searchBtn.addEventListener('click', function () {
+        window.location.href = "/api/imgsearch/" + q.value + "?offset=" + offset.value;
+      });
+    })();
+  </script>
+</body>
+
+</html>
